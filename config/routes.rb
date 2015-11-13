@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'trip#index'
+  post 'trip/send_favorite', as: 'send', defaults: { format: 'json' }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
