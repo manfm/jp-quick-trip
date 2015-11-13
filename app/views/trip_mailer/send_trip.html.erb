@@ -1,0 +1,17 @@
+    <a href="http://odigo.travel<%= @trip['link'] %>"><h1>New trip "<%= @trip['title'] %>"</h1></a>
+    <p>
+      <%= @trip['desc'] %>
+    </p>
+    <% @trip['days'].each_with_index do |day, day_number| %>
+      <hr><h2>Day <%= day_number+1 %></h2>
+      <% day['spots'].each do |place| %>
+        <div>
+          <h2><%= place['name_en'] %> (<%= place['name_zh'] %>)</h2>
+          <%= place['address'] %>, <%= place['city'] %>, <%= place['state'] %> (<%= place['address_ja'] %>)
+          </br>
+          GPS: <%= place['coords']['latitude'] %>,<%= place['coords']['longitude'] %>
+          <p><%= place['desc'] %></p>
+        </div>
+      <% end %>
+    <% end %>
+    <p>Thanks for joining and have a great day!</p>
