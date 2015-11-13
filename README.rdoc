@@ -1,28 +1,26 @@
-== README
+== About
+Simple rails app which sends you email with the most popular trip in your location (Japan only)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+(Integrated with https://www.odigo.travel API)
 
-Things you may want to cover:
+== Deployment (dev)
 
-* Ruby version
+= Run Vagrant
+<tt>vagrant up</tt>
 
-* System dependencies
+<tt>vagrant ssh</tt>
 
-* Configuration
+= Configure
+<tt>cp config/secrets.yml.example config/secrets.yml</tt>
 
-* Database creation
+edit config/secrets.yml file, set
 
-* Database initialization
+gmail_username
 
-* How to run the test suite
+gmail_password
 
-* Services (job queues, cache servers, search engines, etc.)
+= Run server
+<tt>rails s -b 0.0.0.0</tt>
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+= Show page in browser
+http://localhost:3000
